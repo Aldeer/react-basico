@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useState, Fragment} from "react";
 
-const contador = () => {
+const Contador = () => {
+    //declaracio de variable de estado
+    const [numero, setNumero] = useState(0);
+    const aumentar = () => {
+        console.log('Me diste un click')
+        setNumero(numero + 1)
+    }
+    
     return (
-        <h3>Mi primer componente</h3>
+        <Fragment>
+            <h3>Mi primer componente {numero}</h3>
+            <button onClick={aumentar}>Aumentar</button>
+        </Fragment>    
     );
 }
 
-export default contador;
+export default Contador;
