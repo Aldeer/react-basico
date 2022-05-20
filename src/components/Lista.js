@@ -1,23 +1,30 @@
-import React, {useState, Fragment} from 'react';
+import {useState, Fragment} from 'react';
 
 const Lista = () => {
 
-    const [arrayNumero, setNumero] = useState([]);
-    const [contador, setContador] = useState(0);
+    const [arrayNumero, setArrayNumero] = useState([1,2,3]);
+    const [numero, setNumero] = useState(4);
     const agregarElemento = () => {
-        setContador(contador + 1)
-        setNumero([...arrayNumero, contador])
+        console.log('click');
+        setNumero(numero + 1);
+        setArrayNumero([
+            ...arrayNumero,
+            numero
+        ]);
     }
 
     return (
         <Fragment>
-            <h1>Soy una Lista</h1>
+            <h2>Lista</h2>
             <button onClick={agregarElemento}>Agregar</button>
-            {
-                arrayNumero.map((item, index) =>
-                    <p key={index}> {item} - {index} </p>
-                )
-            }
+            <ul>
+                {
+                    arrayNumero.map((item, index) => 
+                        <li key={index}>Item: {item} - Index: {index}</li>
+                    )
+                }
+            </ul>
+            
         </Fragment>
     );
 }

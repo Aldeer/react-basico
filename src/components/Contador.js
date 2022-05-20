@@ -1,18 +1,21 @@
-import React, {useState, Fragment} from "react";
+import {useState, Fragment} from 'react';
 
 const Contador = () => {
-    //declaracio de variable de estado
-    const [numero, setNumero] = useState(0);
-    const aumentar = () => {
-        console.log('Me diste un click')
-        setNumero(numero + 1)
-    }
     
+    const [contador, setContador] = useState(0);
+    const aumentar = () => {
+        console.log('me diste un click');
+        setContador(contador+1);
+    }
+
+
     return (
         <Fragment>
-            <h3>Mi primer componente {numero}</h3>
+            <h3>
+            Esto es un contador: {contador}
+            </h3>
             <button onClick={aumentar}>Aumentar</button>
-        </Fragment>    
+        </Fragment>  
     );
 }
 
